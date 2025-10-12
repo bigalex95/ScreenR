@@ -12,6 +12,7 @@ class ScreenCapture:
     def __init__(self):
         self.sct = None
         self.recording_area = None
+        self.custom_area = None
         self.monitor_info = None
         self._thread_local = threading.local()
         self._init_capture()
@@ -61,12 +62,18 @@ class ScreenCapture:
         if area_type == 'fullscreen':
             self.recording_area = self.monitor_info['all_monitors']
         elif area_type == 'custom' and custom_area:
+            # For custom areas, we need to capture from the virtual desktop (all monitors)
+            # but then crop to the specific area. We'll capture the full virtual desktop
+            # and let the capture_frame method handle the cropping.
             self.recording_area = {
                 'top': custom_area['top'],
                 'left': custom_area['left'],
                 'width': custom_area['width'],
                 'height': custom_area['height']
             }
+            # Store custom area info for potential cropping
+            self.custom_area = custom_area
+            print(f"Custom area set: {custom_area}")
         else:
             # Default to primary monitor
             if self.monitor_info['monitors']:
@@ -85,6 +92,11 @@ class ScreenCapture:
         try:
             if not self.recording_area:
                 self.set_recording_area('fullscreen')
+            
+            # Ensure we have a valid recording area
+            if not self.recording_area:
+                print("No valid recording area available")
+                return None
             
             # Get thread-local screen capture instance
             sct = self._get_thread_local_sct()
