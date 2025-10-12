@@ -15,7 +15,13 @@ jobs:
       - name: Install system dependencies
         run: |
           sudo apt-get update
-          sudo apt-get install -y libgl1 libglib2.0-0 libxkbcommon-x11-0 libxcb-xinerama0
+          sudo apt-get install -y \
+            libgl1 \
+            libglib2.0-0 \
+            libxkbcommon-x11-0 \
+            libxcb-xinerama0 \
+            libxcb-cursor0 \
+            portaudio19-dev    # Required for pyaudio
 
       - name: Set up Python
         uses: actions/setup-python@v5
@@ -25,7 +31,6 @@ jobs:
       - name: Install uv
         uses: astral-sh/setup-uv@v3
 
-      # 👇 MANUAL CACHE FOR UV
       - name: Cache uv dependencies
         uses: actions/cache@v3
         with:
@@ -34,21 +39,21 @@ jobs:
           restore-keys: |
             uv-${{ runner.os }}-py3.11-
 
-      - name: Sync dependencies with uv
+      - name: Sync Python dependencies
         run: uv sync --frozen
 
       - name: Install PyInstaller
         run: uv pip install pyinstaller
 
-      - name: Build Linux executable
+      - name: Build executable with PyInstaller
         run: |
           source .venv/bin/activate
           pyinstaller --onefile --windowed --clean main.py
 
-      - name: Make executable
+      - name: Ensure executable permissions
         run: chmod +x dist/main
 
-      - name: Upload artifact
+      - name: Upload Linux artifact
         uses: actions/upload-artifact@v4
         with:
           name: ScreenRecorder-Linux
