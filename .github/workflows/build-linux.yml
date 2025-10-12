@@ -1,0 +1,47 @@
+name: Build Linux Binary
+
+on:
+  push:
+    branches: [ main ]
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Install system dependencies (GUI support)
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y libgl1 libglib2.0-0 libxkbcommon-x11-0 libxcb-xinerama0
+
+      - name: Install uv
+        uses: astral-sh/setup-uv@v3
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+          cache: 'uv'
+
+      - name: Sync dependencies with uv
+        run: uv sync --frozen
+
+      - name: Install PyInstaller
+        run: uv pip install pyinstaller
+
+      - name: Build Linux executable
+        run: |
+          source .venv/bin/activate
+          pyinstaller --onefile --windowed --clean main.py
+
+      - name: Make binary executable (safety)
+        run: chmod +x dist/main
+
+      - name: Upload Linux artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: ScreenRecorder-Linux
+          path: dist/main
