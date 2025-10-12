@@ -1,11 +1,12 @@
 
-from PySide6.QtWidgets import QApplication
+from PySide6.QtWidgets import QApplication, QMainWindow, QButtonGroup, QMessageBox, QFileDialog
 import sys
-from PySide6.QtCore import QTextStream, QFile, QIODevice
-from PySide6.QtWidgets import QMainWindow, QButtonGroup
+from PySide6.QtCore import QTextStream, QFile, QIODevice, QTimer, QThread, Signal
 from PySide6.QtGui import QIcon
 from ui.ui_screen_recorder import Ui_MainWindow
 import resources.resources_rc
+from recorder import RecorderManager
+from pathlib import Path
 
 
 class ScreenRecorder(QMainWindow):
@@ -13,6 +14,10 @@ class ScreenRecorder(QMainWindow):
         super().__init__()
         self.ui = Ui_MainWindow()
         self.ui.setupUi(self)
+
+        # Initialize the recorder manager
+        self.recorder = RecorderManager()
+        self.setup_recorder_callbacks()
 
         # Create button groups (this is where the magic happens!)
         self.setup_button_groups()
@@ -31,8 +36,35 @@ class ScreenRecorder(QMainWindow):
         # Update button states
         self.update_button_states()
 
+        # Set up status updates
+        self.status_timer = QTimer()
+        self.status_timer.timeout.connect(self.update_recording_status)
+        
+        # Initialize preview label
+        self.ui.previewLabel.setText("Ready to record\nClick 'Start Recording' to begin")
+
         # 👇 Load style from external .qss file bundled via resources
         self.load_style_from_resource()
+
+    def setup_recorder_callbacks(self):
+        """Set up callbacks for recorder status updates"""
+        self.recorder.set_status_callback(self.on_recorder_status)
+        self.recorder.set_progress_callback(self.on_recorder_progress)
+
+    def on_recorder_status(self, status: str):
+        """Handle recorder status updates"""
+        print(f"Recorder status: {status}")
+        # Update preview label with status
+        self.ui.previewLabel.setText(status)
+
+    def on_recorder_progress(self, stats: dict):
+        """Handle recorder progress updates"""
+        duration = stats.get('recording_duration', 0)
+        frames = stats.get('frames_captured', 0)
+        dropped = stats.get('frames_dropped', 0)
+        
+        status_text = f"Recording: {duration:.1f}s\nFrames: {frames} (dropped: {dropped})"
+        self.ui.previewLabel.setText(status_text)
 
     def load_style_from_resource(self):
         """Load QSS from Qt resource system (e.g., :/styles/dark_theme.qss)"""
@@ -41,7 +73,7 @@ class ScreenRecorder(QMainWindow):
             print("❌ Style file not found in resources!")
             return
 
-        if not file.open(QIODevice.ReadOnly | QIODevice.Text):
+        if not file.open(QIODevice.OpenModeFlag.ReadOnly | QIODevice.OpenModeFlag.Text):
             print("❌ Could not open style file!")
             return
 
@@ -217,23 +249,100 @@ class ScreenRecorder(QMainWindow):
         # Force update of the preview label
         self.ui.previewLabel.update()
 
+    def update_recording_status(self):
+        """Update recording status display"""
+        if self.recorder.is_recording():
+            stats = self.recorder.get_recording_stats()
+            duration = stats.get('recording_duration', 0)
+            frames = stats.get('frames_captured', 0)
+            dropped = stats.get('frames_dropped', 0)
+            
+            status_text = f"Recording: {duration:.1f}s\nFrames: {frames}"
+            if dropped > 0:
+                status_text += f" (dropped: {dropped})"
+            
+            self.ui.previewLabel.setText(status_text)
+
+    def apply_recording_settings(self):
+        """Apply current UI settings to the recorder"""
+        # Audio settings
+        audio_enabled = not hasattr(self, 'selected_audio') or self.selected_audio != "None"
+        
+        # Recording area
+        area_type = 'fullscreen' if hasattr(self, 'selected_area') and self.selected_area == "Full Screen" else 'custom'
+        
+        # Quality settings
+        quality_map = {
+            "Low": "low",
+            "Medium": "medium", 
+            "High": "high"
+        }
+        quality = quality_map.get(getattr(self, 'selected_quality', 'High'), 'high')
+        
+        # Apply settings
+        self.recorder.set_settings(
+            audio_enabled=audio_enabled,
+            area_type=area_type,
+            quality=quality,
+            output_directory=str(Path.home() / 'Videos' / 'ScreenR')
+        )
+
     def toggle_recording(self):
-        self.is_recording = not self.is_recording
-        self.is_paused = False
-        self.update_button_states()
-        if self.is_recording:
-            print("Recording started...")
+        if not self.is_recording:
+            # Start recording
+            self.apply_recording_settings()
+            
+            if self.recorder.start_recording():
+                self.is_recording = True
+                self.is_paused = False
+                self.status_timer.start(1000)  # Update every second
+                print("Recording started...")
+            else:
+                QMessageBox.warning(self, "Recording Error", "Failed to start recording. Check permissions and try again.")
         else:
+            # Stop recording
+            self.recorder.stop_recording()
+            self.is_recording = False
+            self.is_paused = False
+            self.status_timer.stop()
+            self.ui.previewLabel.setText("Recording saved!\nReady for next recording")
             print("Recording stopped...")
+        
+        self.update_button_states()
 
     def toggle_pause(self):
         if self.is_recording:
-            self.is_paused = not self.is_paused
-            self.update_button_states()
-            if self.is_paused:
+            if not self.is_paused:
+                self.recorder.pause_recording()
+                self.is_paused = True
                 print("Recording paused...")
             else:
+                self.recorder.resume_recording()
+                self.is_paused = False
                 print("Recording resumed...")
+            
+            self.update_button_states()
+
+    def closeEvent(self, event):
+        """Handle application close event"""
+        if self.is_recording:
+            reply = QMessageBox.question(
+                self, 
+                'Recording in Progress',
+                'Recording is in progress. Do you want to stop recording and exit?',
+                QMessageBox.StandardButton.Yes | QMessageBox.StandardButton.No,
+                QMessageBox.StandardButton.No
+            )
+            
+            if reply == QMessageBox.StandardButton.Yes:
+                self.recorder.stop_recording()
+                self.recorder.cleanup()
+                event.accept()
+            else:
+                event.ignore()
+        else:
+            self.recorder.cleanup()
+            event.accept()
 
 
 if __name__ == "__main__":
