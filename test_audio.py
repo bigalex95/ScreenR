@@ -3,7 +3,11 @@
 Test audio capture functionality
 """
 import sys
-sys.path.append('/home/bigalex95/Projects/Pet_Projects/ScreenR')
+import os
+# Dynamically add the project root to sys.path
+project_root = os.path.abspath(os.path.join(os.path.dirname(__file__), '..'))
+if project_root not in sys.path:
+    sys.path.append(project_root)
 
 from recorder.audio_capture import AudioCapture
 import time
