@@ -6,242 +6,312 @@
 from PySide6 import QtCore
 
 qt_resource_data = b"\
-\x00\x00\x02\xb3\
-\x00\
-\x00\x09Ax\xda\x8dVKo\x9c0\x10\xbeG\xca\x7f\
-\xb0voQIXv\xa1\xbb\xe4\xd4\xf4PUj\xa5\
->\x95ce\xf0x\xb1\xc2bb{\xb3I\xab\xfc\xf7\
-\x9a\xb7\x01\xc3\x86\x13\x9a\xb1\xe7\xf1\xcd7\x1f\xdc\x5c\xa1\
-\x94\xed\x13\xf5G%p\x80\xebG)\xd1\xd5\xcd\xe5\xc5\
-\xe5\xc5\xf7\xaf\x98e\xf7,#\xfc\x84\xfe]^ \xfd\
-D8~\xd8\x0b~\xcc\x88\x13\xf3\x94\x8b\x10-\xe9\x96\
-\xee(\xbe\xad\xfc\x8d\xd1[y\xbe\xb7\xab\x8d\x94g\xca\
-\xa1\xf8\xc0\xd2\x97\x10-~\xc2\x9e\x03\xfa\xfdy\xf1\x0e\
--~\xf0\x88+\xae\xdf$\xce\xa4#A0j\xde\x91\
-\xec/\x84h\xb5\xc9\x9f\xb5\xf5\xb5,\xe9\x17\x8e\xee\x19\
-\xd9\x83\x0a\xc3\x1cg\xd0\xd6\xc5\x05\x01\x9dx\x95?#\
-\xc9SF\xd0\x92\x00x\x10\xdc\x9a~G`\xc2\x8e2\
-D\xdb2b\xbf\xa1\x10\x9d\x12\xa6\xa0\xb6\x1f\xb0\xd8\xb3\
-L\x07t\xfb\xc9\xef\xb0\x08C\x85\xa31 \xbak\xd8\
-A\x0ct\x00\xc5f\xe7\xbb\xfe\xfb\xda\x98cBX\xb6\
-\xaf\xe2\x22\xcf\xed\xea\xa8\x0aT<wR\xa0\xaa\xad4\
-\xb0\x9d\x10\xc5\xb8,G\xaa\xa2+w\x88\xbc\xd6^\x82\
-y\x82\xca\x1c\xb8\xae\xad\xa1PB\x0a\xb1\x02b\xedl\
-M\xb6\x11%\xfd\xce\x1a\xb8\xc6\xa1\x12\xfe\x04\xc2\x1a'\
-\x06\xb2!\xb8\xbd\xf4\xed(\x93\xbb\xa3R<\x9b#\xd8\
-\x8a\xae\xa9?G0\xcb\xf41\x89\xfc\x88\x8cP\xf7\xac\
-\xa8\x8fi1\xa6\xdf\x04\x8e%\xec\x1a\xf3\x13#*)\
-\xc6\xda\x05/\xccI}xc\xd2\xa8\xebz\x0a\xa9\xb6\
-\xf7\x1e\xa3\xeaj\x1b\xdf6\xd8\xc2.\xb0E\xcd\x05H\
-i\x9bd{\xb7\xb7\x1c5<\x05\xb5z\xed6v\xbd\
-\xa3\x8a\x1f\x06\xbb`\xa4\x8b\x13\x88\x1ff\xd3\xcd\xd1\xc7\
-\x1c\xa0\xd7\x0dp\xeb\xc6.\xa5\xb6t\x84I\x1c\xa5\xb3\
-\xf9\xac\x9a\xd4\xa3\xc4\x00\xcb\x01/\xbf\xe0\x08\xd2&\xbe\
-u\x91\xdf@\x10\xbf%H\xcb?}\xd2\xaa=]\xe1\
-\xe53Mk\x1b\x1f\x1a\xf6n\x06:P\xc1\xd9-\xfb\
-'\x9d*\xbf\xe3\xcfs\xb8\x9dI?\xa7\xa9+w\xa8\
-C%\x9f\x8cm\xeb\xd6\xb0\x93\xac\xe9\x0fF\x03c\xc4\
-Sb\x01\xdd7\xb8\xd8t\xa6\xd5\x87\xa9\xb4\xfd(\xc8\
-c\x14\xeb\x1b\x82\xa7\x0e\xd7\x9aX RUv;\xf2\
-\xe7\x5c2\xc54\xb9\x90.\x1a\x15\x0al\x1b\x9d\xd1\xe2\
-\xb9]\x9d\xd1)\x8bpO\x0atI\xc4\xa5\xde\xe7'\
-\x06'++{\xabe\x024\x11\xdd\x80\xf31\x17<\
-\x07\xa1^\x1c\xac\x7f\x00\xb2\x03d\xda\xff\xa1x\xfd\xa8\
-_AL\xb6zfu\xdf\xf6\xe5\xb5\xb1\xc1\x94Lo\
- \xa5\xb5\xc2\xae=S\x85\xc6\xf8\x5c\x0b\x88uJ\x1d\
-y\xf8o`T\xd8\x826\x19%\xc7GSA\x8d\x10\
-\x04\xcbD{\x96t\x1d\xef\x82b\xb2\xaf\xff\x01j\xf1\
-\xb12\
-\x00\x00\x0b\xb6\
+\x00\x00\x08\xc8\
+/\
+* light_theme.qs\
+s */\x0a\x0aQMainWindo\
+w {\x0a    backgrou\
+nd-color: #f8f9f\
+a;\x0a    color: #2\
+12529;\x0a    font-\
+family: \x22Segoe U\
+I\x22, \x22Roboto\x22, sa\
+ns-serif;\x0a    fo\
+nt-size: 14px;\x0a}\
+\x0a\x0aQTabWidget::pa\
+ne {\x0a    border:\
+ 1px solid #dee2\
+e6;\x0a    border-r\
+adius: 8px;\x0a    \
+background: whit\
+e;\x0a    margin: 1\
+0px;\x0a}\x0a\x0aQTabBar:\
+:tab {\x0a    backg\
+round: #e9ecef;\x0a\
+    color: #4950\
+57;\x0a    padding:\
+ 10px 20px;\x0a    \
+border-top-left-\
+radius: 6px;\x0a   \
+ border-top-righ\
+t-radius: 6px;\x0a \
+   margin-right:\
+ 2px;\x0a    font-w\
+eight: 600;\x0a}\x0a\x0aQ\
+TabBar::tab:sele\
+cted {\x0a    backg\
+round: #3d8bfd;\x0a\
+    color: white\
+;\x0a}\x0a\x0aQTabBar::ta\
+b:hover {\x0a    ba\
+ckground: #ced4d\
+a;\x0a}\x0a\x0aQPushButto\
+n {\x0a    backgrou\
+nd-color: #f1f3f\
+5;\x0a    color: #2\
+12529;\x0a    borde\
+r: 1px solid #ad\
+b5bd;\x0a    paddin\
+g: 12px 20px;\x0a  \
+  border-radius:\
+ 8px;\x0a    font-s\
+ize: 14px;\x0a    f\
+ont-weight: 600;\
+\x0a    min-width: \
+100px;\x0a    min-h\
+eight: 40px;\x0a}\x0a\x0a\
+QPushButton:hove\
+r {\x0a    backgrou\
+nd-color: #e9ece\
+f;\x0a    border-co\
+lor: #868e96;\x0a}\x0a\
+\x0aQPushButton:pre\
+ssed {\x0a    backg\
+round-color: #de\
+e2e6;\x0a    paddin\
+g-top: 14px;\x0a   \
+ padding-bottom:\
+ 10px;\x0a}\x0a\x0aQPushB\
+utton:checked {\x0a\
+    background-c\
+olor: #3d8bfd;\x0a \
+   color: white;\
+\x0a    border: 2px\
+ solid #80c0ff;\x0a\
+}\x0a\x0aQPushButton:d\
+isabled {\x0a    ba\
+ckground-color: \
+#f8f9fa;\x0a    col\
+or: #adb5bd;\x0a   \
+ border-color: #\
+ced4da;\x0a}\x0a\x0aQLabe\
+l {\x0a    color: #\
+495057;\x0a    font\
+-size: 14px;\x0a   \
+ font-weight: 50\
+0;\x0a    padding: \
+4px 8px;\x0a    bac\
+kground-color: #\
+ffffff;\x0a    bord\
+er: 1px solid #e\
+9ecef;\x0a    borde\
+r-radius: 4px;\x0a \
+   margin: 2px 0\
+;\x0a}\x0a\x0aQGroupBox {\
+\x0a    background-\
+color: #ffffff;\x0a\
+    border: 1px \
+solid #dee2e6;\x0a \
+   border-radius\
+: 10px;\x0a    marg\
+in-top: 20px;\x0a  \
+  padding: 16px;\
+\x0a    color: #212\
+529;\x0a    font-we\
+ight: bold;\x0a    \
+font-size: 15px;\
+\x0a}\x0a\x0aQGroupBox::t\
+itle {\x0a    subco\
+ntrol-origin: ma\
+rgin;\x0a    subcon\
+trol-position: t\
+op left;\x0a    pad\
+ding: 4px 10px;\x0a\
+    background-c\
+olor: #e9ecef;\x0a \
+   color: #21252\
+9;\x0a    border-ra\
+dius: 6px;\x0a    f\
+ont-weight: 600;\
+\x0a}\x0a\x0aQLabel#previ\
+ewLabel {\x0a    co\
+lor: #3d8bfd;\x0a  \
+  font-size: 16p\
+x;\x0a    font-weig\
+ht: bold;\x0a    qp\
+roperty-alignmen\
+t: AlignCenter;\x0a\
+    background-c\
+olor: white;\x0a   \
+ border: 2px sol\
+id #dee2e6;\x0a    \
+border-radius: 8\
+px;\x0a    padding:\
+ 16px;\x0a    min-h\
+eight: 200px;\x0a  \
+  min-width: 320\
+px;\x0a}\x0a\x0aQLabel#pr\
+eviewLabel.recor\
+ding {\x0a    borde\
+r: 2px solid #3d\
+8bfd;\x0a}\x0a\x0aQLabel#\
+previewLabel.pau\
+sed {\x0a    border\
+: 2px dashed #f3\
+c969;\x0a}\
+\x00\x00\x0a\x0f\
 /\
 * dark_theme.qss\
  \xe2\x80\x94 Neon Dark M\
 ode with Borders\
  & Backgrounds *\
-/\x0d\x0a\x0d\x0aQMainWindow\
- {\x0d\x0a    backgrou\
-nd-color: #1e1e2\
-e;\x0d\x0a    color: #\
-cdd6f4;\x0d\x0a    fon\
-t-family: \x22Segoe\
- UI\x22, \x22Roboto\x22, \
-sans-serif;\x0d\x0a   \
- font-size: 14px\
-;\x0d\x0a}\x0d\x0a\x0d\x0a/* Tab W\
-idget */\x0d\x0aQTabWi\
-dget::pane {\x0d\x0a  \
-  border: 1px so\
-lid #313244;\x0d\x0a  \
-  border-radius:\
- 8px;\x0d\x0a    backg\
-round: #24243a;\x0d\
-\x0a    margin: 10p\
-x;\x0d\x0a}\x0d\x0a\x0d\x0aQTabBar\
-::tab {\x0d\x0a    bac\
-kground: #313244\
-;\x0d\x0a    color: #a\
-6adc8;\x0d\x0a    padd\
-ing: 10px 20px;\x0d\
-\x0a    border-top-\
-left-radius: 6px\
-;\x0d\x0a    border-to\
-p-right-radius: \
-6px;\x0d\x0a    margin\
--right: 2px;\x0d\x0a  \
-  font-weight: 6\
-00;\x0d\x0a    font-si\
-ze: 13px;\x0d\x0a}\x0d\x0a\x0d\x0a\
-QTabBar::tab:sel\
-ected {\x0d\x0a    bac\
-kground: #89b4fa\
-;\x0d\x0a    color: #1\
-e1e2e;\x0d\x0a}\x0d\x0a\x0d\x0aQTa\
-bBar::tab:hover \
-{\x0d\x0a    backgroun\
-d: #45475a;\x0d\x0a}\x0d\x0a\
-\x0d\x0a/* Buttons */\x0d\
-\x0aQPushButton {\x0d\x0a\
-    background-c\
-olor: #313244;\x0d\x0a\
+/\x0a\x0aQMainWindow {\
+\x0a    background-\
+color: #1e1e2e;\x0a\
     color: #cdd6\
-f4;\x0d\x0a    border:\
- 1px solid #4547\
-5a;\x0d\x0a    padding\
-: 12px 20px;\x0d\x0a  \
-  border-radius:\
- 8px;\x0d\x0a    font-\
-size: 14px;\x0d\x0a   \
- font-weight: 60\
-0;\x0d\x0a    min-widt\
-h: 100px;\x0d\x0a    m\
-in-height: 40px;\
-\x0d\x0a    transition\
-: all 0.2s ease;\
-\x0d\x0a}\x0d\x0a\x0d\x0aQPushButt\
-on:hover {\x0d\x0a    \
-background-color\
-: #45475a;\x0d\x0a    \
-border-color: #5\
-85b70;\x0d\x0a}\x0d\x0a\x0d\x0aQPu\
-shButton:pressed\
- {\x0d\x0a    backgrou\
-nd-color: #585b7\
-0;\x0d\x0a    padding-\
-top: 14px;\x0d\x0a    \
-padding-bottom: \
-10px;\x0d\x0a}\x0d\x0a\x0d\x0aQPus\
-hButton:checked \
-{\x0d\x0a    backgroun\
-d-color: #7f3fe0\
-;\x0d\x0a    color: wh\
-ite;\x0d\x0a    border\
-: 2px solid #a29\
-bfe;\x0d\x0a    box-sh\
-adow: 0 0 8px rg\
-ba(137, 180, 250\
-, 0.5);\x0d\x0a}\x0d\x0a\x0d\x0aQP\
-ushButton:disabl\
-ed {\x0d\x0a    backgr\
-ound-color: #2d2\
-d44;\x0d\x0a    color:\
- #7a7a9e;\x0d\x0a    b\
-order-color: #3a\
-3a52;\x0d\x0a}\x0d\x0a\x0d\x0a/* L\
-abels \xe2\x80\x94 Add su\
-btle background \
-+ border */\x0d\x0aQLa\
-bel {\x0d\x0a    color\
-: #a6adc8;\x0d\x0a    \
-font-size: 14px;\
-\x0d\x0a    font-weigh\
-t: 500;\x0d\x0a    pad\
-ding: 4px 8px;\x0d\x0a\
-    background-c\
-olor: #2a2a3e;\x0d\x0a\
-    border: 1px \
-solid #3a3a52;\x0d\x0a\
-    border-radiu\
-s: 4px;\x0d\x0a    mar\
-gin: 2px 0;\x0d\x0a}\x0d\x0a\
-\x0d\x0a/* Group Boxes\
- \xe2\x80\x94 Enhanced Ti\
-tle */\x0d\x0aQGroupBo\
-x {\x0d\x0a    backgro\
-und-color: #2424\
-3a;\x0d\x0a    border:\
- 1px solid #4547\
-5a;\x0d\x0a    border-\
-radius: 10px;\x0d\x0a \
-   margin-top: 2\
-0px;\x0d\x0a    paddin\
-g: 16px;\x0d\x0a    co\
-lor: #cdd6f4;\x0d\x0a \
-   font-weight: \
-bold;\x0d\x0a    font-\
-size: 15px;\x0d\x0a}\x0d\x0a\
-\x0d\x0aQGroupBox::tit\
-le {\x0d\x0a    subcon\
-trol-origin: mar\
-gin;\x0d\x0a    subcon\
-trol-position: t\
-op left;\x0d\x0a    pa\
-dding: 4px 10px;\
-\x0d\x0a    background\
--color: #313244;\
-\x0d\x0a    color: #ff\
-ffff;\x0d\x0a    borde\
-r-radius: 6px;\x0d\x0a\
+f4;\x0a    font-fam\
+ily: \x22Segoe UI\x22,\
+ \x22Roboto\x22, sans-\
+serif;\x0a    font-\
+size: 14px;\x0a}\x0a\x0a/\
+* Tab Widget */\x0a\
+QTabWidget::pane\
+ {\x0a    border: 1\
+px solid #313244\
+;\x0a    border-rad\
+ius: 8px;\x0a    ba\
+ckground: #24243\
+a;\x0a    margin: 1\
+0px;\x0a}\x0a\x0aQTabBar:\
+:tab {\x0a    backg\
+round: #313244;\x0a\
+    color: #a6ad\
+c8;\x0a    padding:\
+ 10px 20px;\x0a    \
+border-top-left-\
+radius: 6px;\x0a   \
+ border-top-righ\
+t-radius: 6px;\x0a \
+   margin-right:\
+ 2px;\x0a    font-w\
+eight: 600;\x0a    \
+font-size: 13px;\
+\x0a}\x0a\x0aQTabBar::tab\
+:selected {\x0a    \
+background: #89b\
+4fa;\x0a    color: \
+#1e1e2e;\x0a}\x0a\x0aQTab\
+Bar::tab:hover {\
+\x0a    background:\
+ #45475a;\x0a}\x0a\x0a/* \
+Buttons */\x0aQPush\
+Button {\x0a    bac\
+kground-color: #\
+313244;\x0a    colo\
+r: #cdd6f4;\x0a    \
+border: 1px soli\
+d #45475a;\x0a    p\
+adding: 12px 20p\
+x;\x0a    border-ra\
+dius: 8px;\x0a    f\
+ont-size: 14px;\x0a\
     font-weight:\
- 600;\x0d\x0a    font-\
-size: 14px;\x0d\x0a}\x0d\x0a\
-\x0d\x0a/* Preview Lab\
-el \xe2\x80\x94 Make it l\
-ook like a real \
-screen */\x0d\x0aQLabe\
-l#previewLabel {\
-\x0d\x0a    color: #89\
-b4fa;\x0d\x0a    font-\
-size: 16px;\x0d\x0a   \
- font-weight: bo\
-ld;\x0d\x0a    qproper\
-ty-alignment: Al\
-ignCenter;\x0d\x0a    \
+ 600;\x0a    min-wi\
+dth: 100px;\x0a    \
+min-height: 40px\
+;\x0a}\x0a\x0aQPushButton\
+:hover {\x0a    bac\
+kground-color: #\
+45475a;\x0a    bord\
+er-color: #585b7\
+0;\x0a}\x0a\x0aQPushButto\
+n:pressed {\x0a    \
 background-color\
-: #1e1e2e;\x0d\x0a    \
-border: 2px soli\
-d #45475a;\x0d\x0a    \
-border-radius: 8\
-px;\x0d\x0a    padding\
-: 16px;\x0d\x0a    min\
--height: 200px;\x0d\
-\x0a    min-width: \
-320px;\x0d\x0a}\x0d\x0a\x0d\x0aQLa\
-bel#previewLabel\
-.recording {\x0d\x0a  \
-  border: 2px so\
-lid #89b4fa;\x0d\x0a}\x0d\
-\x0a\x0d\x0aQLabel#previe\
-wLabel.paused {\x0d\
-\x0a    border: 2px\
- dashed #f3c969;\
-\x0d\x0a}\x0d\x0a\x0d\x0a/* Option\
-al: Add glow to \
-active buttons *\
-/\x0d\x0aQPushButton:c\
-hecked {\x0d\x0a    ba\
+: #585b70;\x0a    p\
+adding-top: 14px\
+;\x0a    padding-bo\
+ttom: 10px;\x0a}\x0a\x0aQ\
+PushButton:check\
+ed {\x0a    backgro\
+und-color: #7f3f\
+e0;\x0a    color: w\
+hite;\x0a    border\
+: 2px solid #a29\
+bfe;\x0a}\x0a\x0aQPushBut\
+ton:disabled {\x0a \
+   background-co\
+lor: #2d2d44;\x0a  \
+  color: #7a7a9e\
+;\x0a    border-col\
+or: #3a3a52;\x0a}\x0a\x0a\
+/* Labels \xe2\x80\x94 Ad\
+d subtle backgro\
+und + border */\x0a\
+QLabel {\x0a    col\
+or: #a6adc8;\x0a   \
+ font-size: 14px\
+;\x0a    font-weigh\
+t: 500;\x0a    padd\
+ing: 4px 8px;\x0a  \
+  background-col\
+or: #2a2a3e;\x0a   \
+ border: 1px sol\
+id #3a3a52;\x0a    \
+border-radius: 4\
+px;\x0a    margin: \
+2px 0;\x0a}\x0a\x0a/* Gro\
+up Boxes \xe2\x80\x94 Enh\
+anced Title */\x0aQ\
+GroupBox {\x0a    b\
+ackground-color:\
+ #24243a;\x0a    bo\
+rder: 1px solid \
+#45475a;\x0a    bor\
+der-radius: 10px\
+;\x0a    margin-top\
+: 20px;\x0a    padd\
+ing: 16px;\x0a    c\
+olor: #cdd6f4;\x0a \
+   font-weight: \
+bold;\x0a    font-s\
+ize: 15px;\x0a}\x0a\x0aQG\
+roupBox::title {\
+\x0a    subcontrol-\
+origin: margin;\x0a\
+    subcontrol-p\
+osition: top lef\
+t;\x0a    padding: \
+4px 10px;\x0a    ba\
 ckground-color: \
-#7f3fe0;\x0d\x0a    co\
-lor: white;\x0d\x0a   \
- border: 2px sol\
-id #a29bfe;\x0d\x0a   \
- box-shadow: 0 0\
- 12px rgba(137, \
-180, 250, 0.6);\x0d\
-\x0a}\x0d\x0a\x0d\x0a/* Make ic\
-ons larger */\x0d\x0aQ\
-PushButton {\x0d\x0a  \
-  icon-size: 24p\
-x;\x0d\x0a}\
+#313244;\x0a    col\
+or: #ffffff;\x0a   \
+ border-radius: \
+6px;\x0a    font-we\
+ight: 600;\x0a    f\
+ont-size: 14px;\x0a\
+}\x0a\x0a/* Preview La\
+bel \xe2\x80\x94 Make it \
+look like a real\
+ screen */\x0aQLabe\
+l#previewLabel {\
+\x0a    color: #89b\
+4fa;\x0a    font-si\
+ze: 16px;\x0a    fo\
+nt-weight: bold;\
+\x0a    qproperty-a\
+lignment: AlignC\
+enter;\x0a    backg\
+round-color: #1e\
+1e2e;\x0a    border\
+: 2px solid #454\
+75a;\x0a    border-\
+radius: 8px;\x0a   \
+ padding: 16px;\x0a\
+    min-height: \
+200px;\x0a    min-w\
+idth: 320px;\x0a}\x0a\x0a\
+QLabel#previewLa\
+bel.recording {\x0a\
+    border: 2px \
+solid #89b4fa;\x0a}\
+\x0a\x0aQLabel#preview\
+Label.paused {\x0a \
+   border: 2px d\
+ashed #f3c969;\x0a}\
+\x0a\x0a/* Make icons \
+larger */\x0aQPushB\
+utton {\x0a    icon\
+-size: 24px;\x0a}\
 \x00\x00\x02\x84\
 <\
 svg xmlns=\x22http:\
@@ -459,22 +529,22 @@ qt_resource_struct = b"\
 \x00\x00\x00\x00\x00\x00\x00\x00\
 \x00\x00\x00\x10\x00\x02\x00\x00\x00\x02\x00\x00\x00\x03\
 \x00\x00\x00\x00\x00\x00\x00\x00\
-\x00\x00\x00\x22\x00\x01\x00\x00\x00\x01\x00\x00\x00\x00\
-\x00\x00\x01\x99\xd75\xdbA\
-\x00\x00\x00F\x00\x00\x00\x00\x00\x01\x00\x00\x02\xb7\
-\x00\x00\x01\x99\xd75\xdbA\
-\x00\x00\x00h\x00\x00\x00\x00\x00\x01\x00\x00\x0eq\
-\x00\x00\x01\x99\xd75\xdb=\
-\x00\x00\x00\xc4\x00\x00\x00\x00\x00\x01\x00\x00\x15v\
-\x00\x00\x01\x99\xd75\xdb>\
-\x00\x00\x00\x96\x00\x00\x00\x00\x00\x01\x00\x00\x11\xfb\
-\x00\x00\x01\x99\xd75\xdb?\
-\x00\x00\x00\xdc\x00\x00\x00\x00\x00\x01\x00\x00\x175\
-\x00\x00\x01\x99\xd75\xdb?\
-\x00\x00\x00\xaa\x00\x00\x00\x00\x00\x01\x00\x00\x14\xb4\
-\x00\x00\x01\x99\xd75\xdb>\
-\x00\x00\x00~\x00\x00\x00\x00\x00\x01\x00\x00\x10\xf9\
-\x00\x00\x01\x99\xd75\xdb=\
+\x00\x00\x00\x22\x00\x00\x00\x00\x00\x01\x00\x00\x00\x00\
+\x00\x00\x01\x99\xd9\x10\xaaX\
+\x00\x00\x00F\x00\x00\x00\x00\x00\x01\x00\x00\x08\xcc\
+\x00\x00\x01\x99\xd9X\xb19\
+\x00\x00\x00h\x00\x00\x00\x00\x00\x01\x00\x00\x12\xdf\
+\x00\x00\x01\x99\xd9\x10\xaaX\
+\x00\x00\x00\xc4\x00\x00\x00\x00\x00\x01\x00\x00\x19\xe4\
+\x00\x00\x01\x99\xd9\x10\xaaX\
+\x00\x00\x00\x96\x00\x00\x00\x00\x00\x01\x00\x00\x16i\
+\x00\x00\x01\x99\xd9\x10\xaaX\
+\x00\x00\x00\xdc\x00\x00\x00\x00\x00\x01\x00\x00\x1b\xa3\
+\x00\x00\x01\x99\xd9\x10\xaaX\
+\x00\x00\x00\xaa\x00\x00\x00\x00\x00\x01\x00\x00\x19\x22\
+\x00\x00\x01\x99\xd9\x10\xaaX\
+\x00\x00\x00~\x00\x00\x00\x00\x00\x01\x00\x00\x15g\
+\x00\x00\x01\x99\xd9\x10\xaaX\
 "
 
 def qInitResources():
