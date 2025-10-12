@@ -3,7 +3,8 @@
 Quick test script to check if screen capture is working
 """
 import sys
-sys.path.append('/home/bigalex95/Projects/Pet_Projects/ScreenR')
+import os
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
 
 from recorder.screen_capture import ScreenCapture
 import time
