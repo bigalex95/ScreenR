@@ -12,14 +12,22 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
 
-      - name: Install uv
-        uses: astral-sh/setup-uv@v3
-
       - name: Set up Python
         uses: actions/setup-python@v5
         with:
           python-version: '3.11'
-          cache: 'uv'
+
+      - name: Install uv
+        uses: astral-sh/setup-uv@v3
+
+      # 👇 MANUAL CACHE FOR UV
+      - name: Cache uv dependencies
+        uses: actions/cache@v3
+        with:
+          path: ~/.cache/uv
+          key: uv-${{ runner.os }}-py3.11-${{ hashFiles('uv.lock') }}
+          restore-keys: |
+            uv-${{ runner.os }}-py3.11-
 
       - name: Sync dependencies with uv
         run: uv sync --frozen
@@ -33,7 +41,7 @@ jobs:
           .venv\Scripts\Activate.ps1
           pyinstaller --onefile --windowed --clean main.py
 
-      - name: Upload Windows artifact
+      - name: Upload artifact
         uses: actions/upload-artifact@v4
         with:
           name: ScreenRecorder-Windows
