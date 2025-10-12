@@ -1,0 +1,144 @@
+/* dark_theme.qss — Neon Dark Mode with Borders & Backgrounds */
+
+QMainWindow {
+    background-color: #1e1e2e;
+    color: #cdd6f4;
+    font-family: "Segoe UI", "Roboto", sans-serif;
+    font-size: 14px;
+}
+
+/* Tab Widget */
+QTabWidget::pane {
+    border: 1px solid #313244;
+    border-radius: 8px;
+    background: #24243a;
+    margin: 10px;
+}
+
+QTabBar::tab {
+    background: #313244;
+    color: #a6adc8;
+    padding: 10px 20px;
+    border-top-left-radius: 6px;
+    border-top-right-radius: 6px;
+    margin-right: 2px;
+    font-weight: 600;
+    font-size: 13px;
+}
+
+QTabBar::tab:selected {
+    background: #89b4fa;
+    color: #1e1e2e;
+}
+
+QTabBar::tab:hover {
+    background: #45475a;
+}
+
+/* Buttons */
+QPushButton {
+    background-color: #313244;
+    color: #cdd6f4;
+    border: 1px solid #45475a;
+    padding: 12px 20px;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 600;
+    min-width: 100px;
+    min-height: 40px;
+    transition: all 0.2s ease;
+}
+
+QPushButton:hover {
+    background-color: #45475a;
+    border-color: #585b70;
+}
+
+QPushButton:pressed {
+    background-color: #585b70;
+    padding-top: 14px;
+    padding-bottom: 10px;
+}
+
+QPushButton:checked {
+    background-color: #7f3fe0;
+    color: white;
+    border: 2px solid #a29bfe;
+    box-shadow: 0 0 8px rgba(137, 180, 250, 0.5);
+}
+
+QPushButton:disabled {
+    background-color: #2d2d44;
+    color: #7a7a9e;
+    border-color: #3a3a52;
+}
+
+/* Labels — Add subtle background + border */
+QLabel {
+    color: #a6adc8;
+    font-size: 14px;
+    font-weight: 500;
+    padding: 4px 8px;
+    background-color: #2a2a3e;
+    border: 1px solid #3a3a52;
+    border-radius: 4px;
+    margin: 2px 0;
+}
+
+/* Group Boxes — Enhanced Title */
+QGroupBox {
+    background-color: #24243a;
+    border: 1px solid #45475a;
+    border-radius: 10px;
+    margin-top: 20px;
+    padding: 16px;
+    color: #cdd6f4;
+    font-weight: bold;
+    font-size: 15px;
+}
+
+QGroupBox::title {
+    subcontrol-origin: margin;
+    subcontrol-position: top left;
+    padding: 4px 10px;
+    background-color: #313244;
+    color: #ffffff;
+    border-radius: 6px;
+    font-weight: 600;
+    font-size: 14px;
+}
+
+/* Preview Label — Make it look like a real screen */
+QLabel#previewLabel {
+    color: #89b4fa;
+    font-size: 16px;
+    font-weight: bold;
+    qproperty-alignment: AlignCenter;
+    background-color: #1e1e2e;
+    border: 2px solid #45475a;
+    border-radius: 8px;
+    padding: 16px;
+    min-height: 200px;
+    min-width: 320px;
+}
+
+QLabel#previewLabel.recording {
+    border: 2px solid #89b4fa;
+}
+
+QLabel#previewLabel.paused {
+    border: 2px dashed #f3c969;
+}
+
+/* Optional: Add glow to active buttons */
+QPushButton:checked {
+    background-color: #7f3fe0;
+    color: white;
+    border: 2px solid #a29bfe;
+    box-shadow: 0 0 12px rgba(137, 180, 250, 0.6);
+}
+
+/* Make icons larger */
+QPushButton {
+    icon-size: 24px;
+}

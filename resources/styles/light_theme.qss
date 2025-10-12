@@ -1,0 +1,122 @@
+/* light_theme.qss */
+
+QMainWindow {
+    background-color: #f8f9fa;
+    color: #212529;
+    font-family: "Segoe UI", "Roboto", sans-serif;
+    font-size: 14px;
+}
+
+QTabWidget::pane {
+    border: 1px solid #dee2e6;
+    border-radius: 8px;
+    background: white;
+    margin: 10px;
+}
+
+QTabBar::tab {
+    background: #e9ecef;
+    color: #495057;
+    padding: 10px 20px;
+    border-top-left-radius: 6px;
+    border-top-right-radius: 6px;
+    margin-right: 2px;
+    font-weight: 600;
+}
+
+QTabBar::tab:selected {
+    background: #3d8bfd;
+    color: white;
+}
+
+QTabBar::tab:hover {
+    background: #ced4da;
+}
+
+QPushButton {
+    background-color: #f1f3f5;
+    color: #212529;
+    border: 1px solid #adb5bd;
+    padding: 12px 20px;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 600;
+    min-width: 100px;
+    min-height: 40px;
+}
+
+QPushButton:hover {
+    background-color: #e9ecef;
+    border-color: #868e96;
+}
+
+QPushButton:pressed {
+    background-color: #dee2e6;
+    padding-top: 14px;
+    padding-bottom: 10px;
+}
+
+QPushButton:checked {
+    background-color: #3d8bfd;
+    color: white;
+    border: 2px solid #80c0ff;
+}
+
+QPushButton:disabled {
+    background-color: #f8f9fa;
+    color: #adb5bd;
+    border-color: #ced4da;
+}
+
+QLabel {
+    color: #495057;
+    font-size: 14px;
+    font-weight: 500;
+    padding: 4px 8px;
+    background-color: #ffffff;
+    border: 1px solid #e9ecef;
+    border-radius: 4px;
+    margin: 2px 0;
+}
+
+QGroupBox {
+    background-color: #ffffff;
+    border: 1px solid #dee2e6;
+    border-radius: 10px;
+    margin-top: 20px;
+    padding: 16px;
+    color: #212529;
+    font-weight: bold;
+    font-size: 15px;
+}
+
+QGroupBox::title {
+    subcontrol-origin: margin;
+    subcontrol-position: top left;
+    padding: 4px 10px;
+    background-color: #e9ecef;
+    color: #212529;
+    border-radius: 6px;
+    font-weight: 600;
+}
+
+QLabel#previewLabel {
+    color: #3d8bfd;
+    font-size: 16px;
+    font-weight: bold;
+    qproperty-alignment: AlignCenter;
+    background-color: white;
+    border: 2px solid #dee2e6;
+    border-radius: 8px;
+    padding: 16px;
+    min-height: 200px;
+    min-width: 320px;
+}
+
+QLabel#previewLabel.recording {
+    border: 2px solid #3d8bfd;
+}
+
+QLabel#previewLabel.paused {
+    border: 2px dashed #f3c969;
+}

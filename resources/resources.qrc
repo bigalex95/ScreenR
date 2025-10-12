@@ -1,0 +1,14 @@
+<RCC>
+  <qresource prefix="/styles">
+    <file alias="dark_theme.qss">styles/dark_theme.qss</file>
+    <file alias="light_theme.qss">styles/light_theme.qss</file>
+  </qresource>
+  <qresource prefix="/icons">
+    <file alias="start.svg">icons/start.svg</file>
+    <file alias="stop.svg">icons/stop.svg</file>
+    <file alias="pause.svg">icons/pause.svg</file>
+    <file alias="resume.svg">icons/resume.svg</file>
+    <file alias="sun.svg">icons/sun.svg</file>
+    <file alias="moon.svg">icons/moon.svg</file>
+  </qresource>
+</RCC>
