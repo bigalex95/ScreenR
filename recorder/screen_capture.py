@@ -138,5 +138,5 @@ class ScreenCapture:
         if hasattr(self._thread_local, 'sct'):
             try:
                 self._thread_local.sct.close()
-            except:
+            except Exception:
                 pass
