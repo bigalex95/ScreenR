@@ -4,7 +4,8 @@ Test the area selector functionality
 """
 import sys
 import os
-sys.path.append('/home/bigalex95/Projects/Pet_Projects/ScreenR')
+# Dynamically add the project root to sys.path for portability
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
 
 from PySide6.QtWidgets import QApplication
 from recorder.area_selector import AreaSelector
