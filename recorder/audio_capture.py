@@ -260,7 +260,7 @@ class AudioCapture:
         if self.temp_audio_file:
             try:
                 os.unlink(self.temp_audio_file.name)
-            except:
+            except OSError:
                 pass
         
         if self.audio:
