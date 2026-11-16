@@ -31,3 +31,7 @@ venv.bak/
 
 
 
+
+# Codec probe output
+test.avi
+.venv/
